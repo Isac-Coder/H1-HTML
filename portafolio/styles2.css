@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    font-family: 'Lato', sans-serif;
+    background-color: #f5f3ef;
+    padding: 2rem 1rem;
+    color: #2c2c2a;
+    animation: cambiarColor 3s infinite alternate;
+}
+
+@keyframes cambiarColor {
+    from { background-color: #ac34db; }
+    to   { background-color: #27cfec; }
+    to  { background-color: #16df9c; }
+}
+
+h2 {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 1.5rem;
+    margin-top: 20px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 40px 0px rgb(99, 98, 98);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+body > h2::after {
+    content: 'La familia más elegante del barrio';
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888780;
+    margin-top: 0.4rem;
+}
+
+/* Contenedor de las tarjetas */
+body > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.card {
+    background: #ffffff;
+    border: 0.5px solid rgba(0,0,0,0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    animation: fadeUp 0.6s ease both;
+    box-shadow: 0px 0px 10px 8px rgb(221, 221, 221);
+}
+
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.mascotas {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .mascotas {
+    transform: scale(1.07);
+}
+
+.card p {
+    padding: 1rem 1.2rem 1.3rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #5f5e5a;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+}
+
+a:hover { color: #2c2c2a; }
