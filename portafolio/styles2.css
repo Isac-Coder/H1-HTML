@@ -7,16 +7,9 @@
 body {
     
     font-family: 'Lato', sans-serif;
-    background-color: #f5f3ef;
+    background-color: #2756c3;
     padding: 2rem 1rem;
     color: #2c2c2a;
-    animation: cambiarColor 3s infinite alternate;
-}
-
-@keyframes cambiarColor {
-    from { background-color: #ac34db; }
-    to   { background-color: #27cfec; }
-    to  { background-color: #16df9c; }
 }
 
 .flower {
@@ -77,7 +70,7 @@ body > div {
 }
 
 .card {
-    background: #ffffff85;
+    background: #ffffffbf;
     border: 0.5px solid rgba(0,0,0,0.12);
     border-radius: 16px;
     overflow: hidden;

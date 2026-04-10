@@ -6,15 +6,10 @@
 
 body {
     font-family: sans-serif;
-    background-color: #ffffff;
+    background-color: #2756c3;
     color: #333;
-    animation: cambiarColor 3s infinite alternate;
 }
 
-@keyframes cambiarColor {
-    from { background-color: #ac34db; }
-    to   { background-color: #16df9c; }
-}
 
 .flower {
     position: fixed;
@@ -42,7 +37,7 @@ body {
 header {
     position: relative;
     z-index: 1;
-    background-color: #ffffff8f;
+    background-color: #ffffffc7;
     justify-items: center;
     max-height: 160px;
     max-width: 750px;
@@ -79,23 +74,27 @@ nav a.logo {
     padding: 10px 40px;
     border-bottom: 3px solid transparent;
     margin-bottom: -2px;
-    transition: color 0.2s, border-color 0.2s;
     border-radius: 3px;
-    transition: transform 0.3s ease, color 0.2s, border-color 0.2s;
+    transition: transform 0.3s ease, color 0.2s, border-color 0.2s, opacity 0.3s ease;
     display: inline-block;
+    opacity: 0;
+    animation: fadeInDown 0.5s ease forwards;
 }
 
+/* Cuando el nav tiene hover, atenúa TODOS los links */
+nav:has(a.logo:hover) a.logo {
+    transform: translateY(4px);
+    opacity: 0.35;
+}
+
+/* El link que está siendo hover se eleva y destaca */
 nav a.logo:hover {
-    transform: scale(1.3);
-    color: #353572;
+    transform: translateY(-6px) !important;
+    opacity: 1 !important;
+    color: #343434;
     border-bottom-color: #7f77dd;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-}
-
-nav a {
-    opacity: 0;
-    animation: fadeInDown 0.5s ease forwards;
 }
 
 nav a:nth-child(1) { animation-delay: 0.1s; }
@@ -114,7 +113,7 @@ main {
 }
 
 #sec {
-    background-color: #ffffff8c;
+    background-color: #ffffffc7;
     max-width: 750px;
     margin: 40px auto 0;
     padding: 2rem 2rem 1rem;
