@@ -71,7 +71,7 @@ body > h2::after {
 body > div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     max-width: 900px;
     margin: 2rem auto;
 }

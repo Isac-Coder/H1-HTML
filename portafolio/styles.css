@@ -16,13 +16,12 @@ body {
     to   { background-color: #16df9c; }
 }
 
-/* ── FLORES FLOTANTES (detrás de todo el contenido) ── */
 .flower {
     position: fixed;
     width: 90px;
     height: 90px;
     pointer-events: none;
-    z-index: -1;           /* detrás del header y main */
+    z-index: -1;
     opacity: 0.82;
     animation: floatLinear 12s linear infinite;
 }
@@ -82,10 +81,12 @@ nav a.logo {
     margin-bottom: -2px;
     transition: color 0.2s, border-color 0.2s;
     border-radius: 3px;
+    transition: transform 0.3s ease, color 0.2s, border-color 0.2s;
+    display: inline-block;
 }
 
 nav a.logo:hover {
-    transform: scale(1.15) translateY(-5px);
+    transform: scale(1.3);
     color: #353572;
     border-bottom-color: #7f77dd;
     border-bottom-left-radius: 20px;
@@ -232,7 +233,6 @@ button:hover {
     color: #000000;
 }
 
-/* ── GITHUB LOGO ── */
 .github-logo {
     position: fixed;
     bottom: 30px;
