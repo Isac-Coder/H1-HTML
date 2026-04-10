@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi portafolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
+
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <g id="flor">
+                <ellipse cx="0" cy="-22" rx="11" ry="18" fill="#e8d8f0" stroke="#9b59b6" stroke-width="1.2" transform="rotate(0)"/>
+                <ellipse cx="0" cy="-22" rx="11" ry="18" fill="#e8d8f0" stroke="#9b59b6" stroke-width="1.2" transform="rotate(60)"/>
+                <ellipse cx="0" cy="-22" rx="11" ry="18" fill="#e8d8f0" stroke="#9b59b6" stroke-width="1.2" transform="rotate(120)"/>
+                <ellipse cx="0" cy="-22" rx="11" ry="18" fill="#e8d8f0" stroke="#9b59b6" stroke-width="1.2" transform="rotate(180)"/>
+                <ellipse cx="0" cy="-22" rx="11" ry="18" fill="#e8d8f0" stroke="#9b59b6" stroke-width="1.2" transform="rotate(240)"/>
+                <ellipse cx="0" cy="-22" rx="11" ry="18" fill="#e8d8f0" stroke="#9b59b6" stroke-width="1.2" transform="rotate(300)"/>
+                <ellipse cx="0" cy="-31" rx="6" ry="7" fill="#8e44ad" opacity="0.55" transform="rotate(0)"/>
+                <ellipse cx="0" cy="-31" rx="6" ry="7" fill="#8e44ad" opacity="0.55" transform="rotate(60)"/>
+                <ellipse cx="0" cy="-31" rx="6" ry="7" fill="#8e44ad" opacity="0.55" transform="rotate(120)"/>
+                <ellipse cx="0" cy="-31" rx="6" ry="7" fill="#8e44ad" opacity="0.55" transform="rotate(180)"/>
+                <ellipse cx="0" cy="-31" rx="6" ry="7" fill="#8e44ad" opacity="0.55" transform="rotate(240)"/>
+                <ellipse cx="0" cy="-31" rx="6" ry="7" fill="#8e44ad" opacity="0.55" transform="rotate(300)"/>
+                <circle cx="0" cy="0" r="10" fill="#f0ece0" stroke="#7d3c98" stroke-width="1"/>
+                <line x1="0" y1="-4" x2="0" y2="-9" stroke="#7d3c98" stroke-width="1.2" transform="rotate(0)"/>
+                <line x1="0" y1="-4" x2="0" y2="-9" stroke="#7d3c98" stroke-width="1.2" transform="rotate(60)"/>
+                <line x1="0" y1="-4" x2="0" y2="-9" stroke="#7d3c98" stroke-width="1.2" transform="rotate(120)"/>
+                <line x1="0" y1="-4" x2="0" y2="-9" stroke="#7d3c98" stroke-width="1.2" transform="rotate(180)"/>
+                <line x1="0" y1="-4" x2="0" y2="-9" stroke="#7d3c98" stroke-width="1.2" transform="rotate(240)"/>
+                <line x1="0" y1="-4" x2="0" y2="-9" stroke="#7d3c98" stroke-width="1.2" transform="rotate(300)"/>
+                <circle cx="0" cy="-9" r="1.8" fill="#7d3c98" transform="rotate(0)"/>
+                <circle cx="0" cy="-9" r="1.8" fill="#7d3c98" transform="rotate(60)"/>
+                <circle cx="0" cy="-9" r="1.8" fill="#7d3c98" transform="rotate(120)"/>
+                <circle cx="0" cy="-9" r="1.8" fill="#7d3c98" transform="rotate(180)"/>
+                <circle cx="0" cy="-9" r="1.8" fill="#7d3c98" transform="rotate(240)"/>
+                <circle cx="0" cy="-9" r="1.8" fill="#7d3c98" transform="rotate(300)"/>
+                <circle cx="0" cy="0" r="5" fill="#d5f0d5" stroke="#5d6d7e" stroke-width="0.8"/>
+            </g>
+            </defs>
+    </svg>
+
+    <!-- 5 flores flotantes reutilizando #flor -->
+    <svg class="flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><use href="#flor" transform="translate(50,50)"/></svg>
+    <svg class="flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><use href="#flor" transform="translate(50,50)"/></svg>
+    <svg class="flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><use href="#flor" transform="translate(50,50)"/></svg>
+    <svg class="flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><use href="#flor" transform="translate(50,50)"/></svg>
+    <svg class="flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><use href="#flor" transform="translate(50,50)"/></svg>
+
     <header>
         <br>
-        <h2>
-            Isac David Alvarez Valdes
-        </h2>
+        <h2>Isac David Alvarez Valdes</h2>
         <nav>
             <a href="#sobre" class="logo">Sobre mi</a>
             <a href="#proyectos" class="logo">Proyectos</a>
@@ -23,7 +61,7 @@
         <br>
     </header>
 
-    <main class="">
+    <main>
         <div id="sec">
             <section id="sobre">
                 <h3>Sobre mi</h3>
@@ -44,21 +82,21 @@
             <section id="contacto">
                 <h3>Contacto</h3>
                 <form>
-                    <input type="text"   name="nombre"  placeholder="Tu nombre"  />
-                    <input type="email"  name="correo"  placeholder="Tu correo"  />
+                    <input type="text"  name="nombre"  placeholder="Tu nombre" />
+                    <input type="email" name="correo"  placeholder="Tu correo" />
                     <textarea name="mensaje" placeholder="Tu mensaje"></textarea>
                     <button type="submit">Enviar</button>
                 </form>
             </section>
         </div>
+
         <div class="github-logo">
-        <a href="https://github.com/Isac-Coder" target="_blank" title="Visitar GitHub">
-            <i class="fab fa-github"></i>
-        </a>
-    </div>
-</body>
+            <a href="https://github.com/Isac-Coder" target="_blank" title="Visitar GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </main>
+
     <br><br>
-    
 </body>
 </html>

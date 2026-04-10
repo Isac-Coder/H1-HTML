@@ -1,5 +1,3 @@
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,40 +13,49 @@ body {
 
 @keyframes cambiarColor {
     from { background-color: #ac34db; }
-    to   { background-color: #27cfec; }
-    to  { background-color: #16df9c; }
+    to   { background-color: #16df9c; }
 }
 
-header{
-    background-color: #ffffff;
+/* ── FLORES FLOTANTES (detrás de todo el contenido) ── */
+.flower {
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    pointer-events: none;
+    z-index: -1;           /* detrás del header y main */
+    opacity: 0.82;
+    animation: floatLinear 12s linear infinite;
+}
+
+.flower:nth-child(1) { top: 15%;  animation-delay: 0s;    animation-duration: 12s; }
+.flower:nth-child(2) { top: 40%;  animation-delay: -3s;   animation-duration: 12s; }
+.flower:nth-child(3) { top: 65%;  animation-delay: -6s;   animation-duration: 12s; }
+.flower:nth-child(4) { top: 80%;  animation-delay: -9s;   animation-duration: 12s; }
+.flower:nth-child(5) { top: 55%;  animation-delay: -1.5s; animation-duration: 12s; }
+
+@keyframes floatLinear {
+    0%   { transform: translateX(-70px) rotate(0deg); opacity: 0; }
+    5%   { opacity: 0.82; }
+    95%  { opacity: 0.82; }
+    100% { transform: translateX(calc(100vw + 70px)) rotate(360deg); opacity: 0; }
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff8f;
     justify-items: center;
     max-height: 160px;
     max-width: 750px;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem 1.5rem;
-    margin-top: 20px;
+    margin: 20px auto 0;
+    padding: 1.5rem;
     border-radius: 40px;
-    box-shadow: 0px 0px 40px 0px rgb(99, 98, 98);
+    box-shadow: 0px 0px 40px 0px rgb(141, 141, 141);
 }
 
-header:hover{
-    box-shadow: 0px 0px 40px 0px rgb(96, 255, 250);
+header:hover {
+    box-shadow: 0px 0px 40px 0px rgb(255, 255, 255);
 }
-
-#sec {
-    background-color: #ffffff;
-    max-width: 750px;
-    margin: 0 auto;
-    padding: 2rem 2rem 1rem;
-    margin-top: 40px;
-    border-radius: 40px;
-    box-shadow: 0px 0px 20px 0px rgb(195, 195, 195);
-}
-
-#sec:hover{
-    box-shadow: 0px 0px 20px 0px rgb(12, 194, 12);   
-}
-
 
 header > h2 {
     font-size: 26px;
@@ -58,9 +65,7 @@ header > h2 {
     letter-spacing: 0.3px;
 }
 
-
 nav {
-    border: 20px;
     border-radius: 50px;
     display: flex;
     gap: 0;
@@ -74,7 +79,7 @@ nav a.logo {
     text-decoration: none;
     padding: 10px 40px;
     border-bottom: 3px solid transparent;
-    margin-bottom: -2px;           /* se solapa con el borde del nav */
+    margin-bottom: -2px;
     transition: color 0.2s, border-color 0.2s;
     border-radius: 3px;
 }
@@ -83,7 +88,6 @@ nav a.logo:hover {
     transform: scale(1.15) translateY(-5px);
     color: #353572;
     border-bottom-color: #7f77dd;
-    border-radius: 3px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -93,22 +97,34 @@ nav a {
     animation: fadeInDown 0.5s ease forwards;
 }
 
-/* Cada item con delay diferente */
 nav a:nth-child(1) { animation-delay: 0.1s; }
 nav a:nth-child(2) { animation-delay: 0.2s; }
 nav a:nth-child(3) { animation-delay: 0.3s; }
 nav a:nth-child(4) { animation-delay: 0.4s; }
 
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
+
+main {
+    position: relative;   /* contexto de apilamiento */
+    z-index: 1;
+}
+
+#sec {
+    background-color: #ffffff8c;
+    max-width: 750px;
+    margin: 40px auto 0;
+    padding: 2rem 2rem 1rem;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px 0px rgb(167, 167, 167);
+}
+
+#sec:hover {
+    box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
+}
+
 section {
     margin-bottom: 2.5rem;
 }
@@ -130,15 +146,11 @@ section h3::after {
     border-radius: 2px;
 }
 
-
 p.tag {
     font-size: 15px;
     line-height: 1.75;
     color: #555;
-    background: none;
-    padding: 0;
 }
-
 
 ul {
     list-style: none;
@@ -170,7 +182,6 @@ ul li a:hover {
     color: #534ab7;
 }
 
-
 form {
     display: flex;
     flex-direction: column;
@@ -191,7 +202,8 @@ textarea {
     transition: border-color 0.2s;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #7f77dd;
 }
 
@@ -200,7 +212,8 @@ textarea {
     resize: vertical;
 }
 
-button[type="submit"], button {
+button[type="submit"],
+button {
     margin-top: 10px;
     align-self: flex-start;
     padding: 10px 24px;
@@ -213,17 +226,19 @@ button[type="submit"], button {
     transition: background-color 0.2s;
 }
 
-button[type="submit"]:hover, button:hover {
+button[type="submit"]:hover,
+button:hover {
     background-color: #7f77dd;
     color: #000000;
 }
 
+/* ── GITHUB LOGO ── */
 .github-logo {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 50;
-        }
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 50;
+}
 
 .github-logo a {
     display: flex;
@@ -250,36 +265,15 @@ button[type="submit"]:hover, button:hover {
     transform: scale(1.1);
 }
 
-@media (max-width: 480px) {
-    .github-logo {
-        bottom: 15px;
-        right: 15px;
-    }
+.fa-github:before { content: "\f09b"; }
+.fa-brands, .fab  { font-family: "Font Awesome 6 Brands"; font-weight: 400; }
 
-    .github-logo a {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
-    }
+@media (max-width: 480px) {
+    .github-logo        { bottom: 15px; right: 15px; }
+    .github-logo a      { width: 30px; height: 30px; font-size: 0.8rem; }
 }
 
 @media (min-width: 1920px) {
-    .github-logo {
-        bottom: 40px;
-        right: 40px;
-    }
-    .github-logo a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-}
-
-.fa-github:before {
-content: "\f09b";
-}
-
-.fa-brands, .fab {
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
+    .github-logo        { bottom: 40px; right: 40px; }
+    .github-logo a      { width: 50px; height: 50px; font-size: 1.5rem; }
 }

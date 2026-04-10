@@ -19,14 +19,38 @@ body {
     to  { background-color: #16df9c; }
 }
 
+.flower {
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    pointer-events: none;
+    z-index: -1;           /* detrás del header y main */
+    opacity: 0.82;
+    animation: floatLinear 12s linear infinite;
+}
+
+.flower:nth-child(1) { top: 15%;  animation-delay: 0s;    animation-duration: 12s; }
+.flower:nth-child(2) { top: 40%;  animation-delay: -3s;   animation-duration: 12s; }
+.flower:nth-child(3) { top: 65%;  animation-delay: -6s;   animation-duration: 12s; }
+.flower:nth-child(4) { top: 80%;  animation-delay: -9s;   animation-duration: 12s; }
+.flower:nth-child(5) { top: 55%;  animation-delay: -1.5s; animation-duration: 12s; }
+
+@keyframes floatLinear {
+    0%   { transform: translateX(-70px)                  rotate(0deg);   opacity: 0; }
+    5%   { opacity: 0.82; }
+    95%  { opacity: 0.82; }
+    100% { transform: translateX(calc(100vw + 70px))     rotate(360deg); opacity: 0; }
+}
+
+
 h2 {
-    background-color: #ffffff;
+    background-color: #ffffffb8;
     max-width: 400px;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 1.5rem;
     margin-top: 20px;
     border-radius: 40px;
-    box-shadow: 0px 0px 40px 0px rgb(99, 98, 98);
+    box-shadow: 0px 0px 40px 0px rgb(255, 255, 255);
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     text-align: center;
@@ -44,7 +68,6 @@ body > h2::after {
     margin-top: 0.4rem;
 }
 
-/* Contenedor de las tarjetas */
 body > div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -54,7 +77,7 @@ body > div {
 }
 
 .card {
-    background: #ffffff;
+    background: #ffffff85;
     border: 0.5px solid rgba(0,0,0,0.12);
     border-radius: 16px;
     overflow: hidden;
@@ -62,7 +85,6 @@ body > div {
     animation: fadeUp 0.6s ease both;
     box-shadow: 0px 0px 10px 8px rgb(221, 221, 221);
 }
-
 
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -85,7 +107,7 @@ body > div {
     padding: 1rem 1.2rem 1.3rem;
     font-size: 0.88rem;
     line-height: 1.65;
-    color: #5f5e5a;
+    color: #000000;
 }
 
 a {
