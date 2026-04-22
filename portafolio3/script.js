@@ -1,7 +1,6 @@
 Document.eventListener("DOMContentLoaded", function() {
     const botonEnviar = document.getElementById("butt-enviar");
-    botonEnviar.addEventListener("click", function(event) {
-        event.preventDefault();
+    botonEnviar.addEventListener("click", function(alert) {
         alert("¡Mensaje enviado!");
     });
 });
