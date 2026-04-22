@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #497ffc;
+    color: #333;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background-color: #ffffff94;
+    max-height: 10rem;
+    max-width: 90%;
+    margin: 20px auto 0;
+    padding: 1.5rem;
+    border-radius: 40px;
+    box-shadow: 0px 0px 40px 0px rgb(141, 141, 141);
+}
+
+header:hover {
+    box-shadow: 0px 0px 40px 0px rgb(255, 255, 255);
+}
+
+header > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+}
+
+nav {
+    border-radius: 50px;
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #e0e0f0;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+nav a.logo {
+    color: #888;
+    text-decoration: none;
+    padding: 10px 40px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    border-radius: 3px;
+    transition: transform 0.5s ease, color 0.5s, border-color 0.5s, opacity 0.3s ease;
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInDown 0.5s ease forwards;
+    transition: ease 0.5s;
+}
+
+/* Cuando el nav tiene hover, atenúa TODOS los links */
+nav:has(a.logo:hover) a.logo {
+    transform: translateY(4px);
+    opacity: 0.35;
+    transition: ease 0.5s;
+}
+
+/* El link que está siendo hover se eleva y destaca */
+nav a.logo:hover {
+    transition: ease 0.5s;
+    transform: translateY(-6px) !important;
+    opacity: 1 !important;
+    color: #343434;
+    border-bottom-color: #7f77dd;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+nav a:nth-child(1) { animation-delay: 0.2s; }
+nav a:nth-child(2) { animation-delay: 0.3s; }
+nav a:nth-child(3) { animation-delay: 0.4s; }
+nav a:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+    position: relative;   /* contexto de apilamiento */
+    z-index: 1;
+}
+
+#sec {
+    background-color: #ffffffc7;
+    max-width: 90%;
+    margin: 40px auto 0;
+    padding: 2rem 2rem 1rem;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px 0px rgb(167, 167, 167);
+}
+
+#sec:hover {
+    box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.75rem;
+}
+
+section h3::after {
+    content: '';
+    display: block;
+    width: 7rem;
+    height: 3px;
+    background: #7f77dd;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+p.tag {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #555;
+}
+
+ul {
+    grid-template-columns : repeat(auto-fit, minmax(220px, 1fr));
+    display: grid;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul li {
+    background: #ffffff;
+    border: 1px solid #e0e0f0;
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+}
+
+ul li:hover {
+    box-shadow: 0 2px 8px rgba(127, 119, 221, 0.15);
+}
+
+ul li a {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+ul li a:hover {
+    color: #534ab7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+}
+
+input,
+textarea {
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #7f77dd;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button[type="submit"],
+button {
+    margin-top: 10px;
+    align-self: flex-start;
+    padding: 10px 24px;
+    background-color: #1a1a2e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover,
+button:hover {
+    background-color: #7f77dd;
+    color: #000000;
+}
+
+.github-logo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 50;
+}
+
+.github-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: white;
+    color: #333;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 3px 3px rgb(255 255 255 / 30%);
+    text-decoration: none;
+}
+
+.github-logo a:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    background: #f0f0f0;
+}
+
+.github-logo a:active {
+    transform: scale(1.1);
+}
+
+.fa-github:before { content: "\f09b"; }
+.fa-brands, .fab  { font-family: "Font Awesome 6 Brands"; font-weight: 400; }
+
+/* ── Móviles pequeños (< 480px) ── */
+@media (max-width: 767px) {
+
+  /* Header más compacto */
+  header {
+    max-width: 95%;
+    max-height: none;       /* que crezca si el nav hace wrap */
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 10px auto 0;
+  }
+
+  header > h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Nav en columna o con scroll horizontal */
+  nav {
+    flex-wrap: wrap;        /* evita overflow */
+    gap: 4px;
+    margin-bottom: 1rem;
+  }
+
+  nav a.logo {
+    margin-top: 12px;
+    padding: 8px 14px;      /* botones más pequeños */
+    font-size: 13px;
+  }
+
+  /* Sección principal */
+  #sec {
+    max-width: 95%;
+    padding: 1.25rem 1rem 0.75rem;
+    border-radius: 20px;
+    margin: 20px auto 0;
+  }
+
+  section h3 {
+    font-size: 17px;
+  }
+
+  section h3::after {
+    width: 5rem;
+  }
+
+  p.tag {
+    font-size: 14px;
+  }
+
+  /* Formulario ocupa todo el ancho */
+  form {
+    max-width: 100%;
+  }
+
+  button[type="submit"],
+  button {
+    width: 100%;            /* botón full-width en móvil */
+    align-self: stretch;
+    text-align: center;
+  }
+
+  /* GitHub badge más cerca del borde */
+  .github-logo {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* ── Móviles medianos (481px – 767px) ── */
+@media (min-width: 768px) {
+
+  header {
+    max-width: 40rem;
+    padding: 1.25rem;
+  }
+
+  #sec {
+    max-width: 92%;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
