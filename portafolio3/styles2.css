@@ -119,3 +119,18 @@ a {
 }
 
 a:hover { color: #2c2c2a; }
+
+#regreso:hover {
+    background-color: #7f77dd;
+    
+}
+
+#regreso {
+    align-self: flex-start;
+    max-width: 100px;
+    background-color: #1a1a2e;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}

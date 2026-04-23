@@ -251,85 +251,83 @@ button:hover {
 @media (max-width: 767px) {
 
   /* Header más compacto */
-  header {
-    max-width: 95%;
-    max-height: none;       /* que crezca si el nav hace wrap */
-    padding: 1rem;
-    border-radius: 20px;
-    margin: 10px auto 0;
-  }
+    header {
+        max-width: 95%;
+        max-height: none;
+        padding: 1rem;
+        border-radius: 20px;
+        margin: 10px auto 0;
+    }
 
-  header > h2 {
-    font-size: 1.1rem;
-    letter-spacing: 0.1rem;
-    margin-bottom: 0.5rem;
-  }
+    header > h2 {
+        font-size: 1.1rem;
+        letter-spacing: 0.1rem;
+        margin-bottom: 0.5rem;
+    }
 
-  /* Nav en columna o con scroll horizontal */
-  nav {
-    flex-wrap: wrap;        /* evita overflow */
-    gap: 4px;
-    margin-bottom: 1rem;
-  }
+    nav {
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 1rem;
+    }
 
-  nav a.logo {
-    margin-top: 12px;
-    padding: 8px 14px;      /* botones más pequeños */
-    font-size: 13px;
-  }
+    nav a.logo {
+        margin-top: 12px;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
 
-  /* Sección principal */
-  #sec {
-    max-width: 95%;
-    padding: 1.25rem 1rem 0.75rem;
-    border-radius: 20px;
-    margin: 20px auto 0;
-  }
+    /* Sección principal */
+    #sec {
+        max-width: 95%;
+        padding: 1.25rem 1rem 0.75rem;
+        border-radius: 20px;
+        margin: 20px auto 0;
+    }
 
-  section h3 {
-    font-size: 17px;
-  }
+    section h3 {
+        font-size: 17px;
+    }
 
-  section h3::after {
-    width: 5rem;
-  }
+    section h3::after {
+        width: 5rem;
+    }
 
-  p.tag {
-    font-size: 14px;
-  }
+    p.tag {
+        font-size: 14px;
+    }
 
-  /* Formulario ocupa todo el ancho */
-  form {
-    max-width: 100%;
-  }
+    /* Formulario ocupa todo el ancho */
+    form {
+        max-width: 100%;
+    }
 
-  button[type="submit"],
-  button {
-    width: 100%;            /* botón full-width en móvil */
-    align-self: stretch;
-    text-align: center;
-  }
+    button[type="submit"],
+    button {
+        width: 100%;
+        align-self: stretch;
+        text-align: center;
+    }
 
-  /* GitHub badge más cerca del borde */
-  .github-logo {
-    bottom: 16px;
-    right: 16px;
-  }
-}
+    .github-logo {
+        bottom: 16px;
+        right: 16px;
+    }
+    }
 
-/* ── Móviles medianos (481px – 767px) ── */
-@media (min-width: 768px) {
+    /* ── Móviles medianos (481px – 767px) ── */
+    @media (min-width: 768px) {
 
-  header {
-    max-width: 40rem;
-    padding: 1.25rem;
-  }
+    header {
+        max-width: 40rem;
+        padding: 1.25rem;
+    }
 
-  #sec {
-    max-width: 92%;
-  }
+    #sec {
+        max-width: 92%;
+    }
 
-  form {
-    max-width: 100%;
-  }
-}
+    form {
+        max-width: 100%;
+    }
+    }
