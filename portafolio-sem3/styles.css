@@ -57,14 +57,12 @@ nav a.logo {
     transition: ease 0.5s;
 }
 
-/* Cuando el nav tiene hover, atenúa TODOS los links */
 nav:has(a.logo:hover) a.logo {
     transform: translateY(4px);
     opacity: 0.35;
     transition: ease 0.5s;
 }
 
-/* El link que está siendo hover se eleva y destaca */
 nav a.logo:hover {
     transition: ease 0.5s;
     transform: translateY(-6px) !important;
@@ -86,7 +84,7 @@ nav a:nth-child(4) { animation-delay: 0.5s; }
 }
 
 main {
-    position: relative;   /* contexto de apilamiento */
+    position: relative;
     z-index: 1;
 }
 
@@ -277,7 +275,6 @@ button:hover {
         font-size: 13px;
     }
 
-    /* Sección principal */
     #sec {
         max-width: 95%;
         padding: 1.25rem 1rem 0.75rem;
@@ -297,7 +294,6 @@ button:hover {
         font-size: 14px;
     }
 
-    /* Formulario ocupa todo el ancho */
     form {
         max-width: 100%;
     }
