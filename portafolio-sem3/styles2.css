@@ -57,6 +57,19 @@ body > div {
     box-shadow: 0px 0px 10px 8px rgb(221, 221, 221);
 }
 
+.rev-card{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background: #ffffffbf;
+    border: 0.5px solid rgba(0,0,0,0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    animation: fadeUp 0.6s ease both;
+    box-shadow: 0px 0px 10px 8px rgb(221, 221, 221);
+}
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -71,11 +84,22 @@ body > div {
     transition: transform 0.5s ease;
 }
 
+
 .card:hover .mascotas {
     transform: scale(1.07);
 }
 
+.rev-card:hover .mascotas {
+    transform: scale(1.07);
+}
 .card p {
+    padding: 1.2rem 1.5rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #000000;
+}
+
+.rev-card p {
     padding: 1.2rem 1.5rem;
     font-size: 0.92rem;
     line-height: 1.75;
@@ -95,3 +119,18 @@ a {
 }
 
 a:hover { color: #2c2c2a; }
+
+#regreso:hover {
+    background-color: #7f77dd;
+    
+}
+
+#regreso {
+    align-self: flex-start;
+    max-width: 100px;
+    background-color: #1a1a2e;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}

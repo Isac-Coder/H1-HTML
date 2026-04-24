@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi portafolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -37,14 +36,14 @@
                     <li><a href="https://github.com/Isac-Coder/Users_History/tree/H3" target="_blank">Simulador de cajero automatico</a></li>
                 </ul>
             </section>
-            <br>
+
             <section id="contacto">
                 <h3>Contacto</h3>
-                <form>
-                    <input type="text"  name="nombre"  placeholder="Tu nombre" />
-                    <input type="email" name="correo"  placeholder="Tu correo" />
+                <form id="miFormulario">
+                    <input type="text"  name="nombre"  placeholder="Tu nombre"/>
+                    <input type="email" name="correo"  placeholder="Tu correo" required/>
                     <textarea name="mensaje" placeholder="Tu mensaje"></textarea>
-                    <button type="submit" id="butt-enviar">Enviar</button>
+                    <button type="submit" id="botonEnviar">Enviar</button>
                 </form>
             </section>
         </div>
@@ -55,8 +54,6 @@
             </a>
         </div>
     </main>
-
-    <br><br>
-    
+    <script src="script.js"></script>
 </body>
 </html>
