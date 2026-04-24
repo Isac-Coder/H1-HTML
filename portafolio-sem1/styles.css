@@ -87,7 +87,7 @@ nav a:nth-child(4) { animation-delay: 0.5s; }
 }
 
 main {
-    position: relative;   /* contexto de apilamiento */
+    position: relative;
     z-index: 1;
 }
 
